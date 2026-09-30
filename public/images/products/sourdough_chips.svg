@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" width="100%" height="100%">
+  <defs>
+    <linearGradient id="chipsGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FEF3C7" />
+      <stop offset="100%" stop-color="#FDE68A" />
+    </linearGradient>
+    <linearGradient id="bagGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#D97706" />
+      <stop offset="50%" stop-color="#F59E0B" />
+      <stop offset="100%" stop-color="#B45309" />
+    </linearGradient>
+  </defs>
+  <rect width="300" height="300" fill="#FFFBEB" rx="24"/>
+  <circle cx="150" cy="150" r="110" fill="url(#chipsGrad)" opacity="0.6"/>
+  <!-- Snack Bag shape -->
+  <path d="M100 70 L200 70 L215 220 C215 232 205 240 190 240 L110 240 C95 240 85 232 85 220 Z" fill="url(#bagGrad)" stroke="#92400E" stroke-width="3"/>
+  <!-- Bag crimp top -->
+  <path d="M96 68 L104 76 L112 68 L120 76 L128 68 L136 76 L144 68 L152 76 L160 68 L168 76 L176 68 L184 76 L192 68 L200 76 L204 68" stroke="#78350F" stroke-width="3" fill="none"/>
+  <!-- Center graphic badge -->
+  <ellipse cx="150" cy="155" rx="42" ry="38" fill="#FFFFFF"/>
+  <text x="150" y="145" font-family="system-ui, sans-serif" font-size="12" font-weight="900" fill="#92400E" text-anchor="middle">ARTISAN</text>
+  <text x="150" y="160" font-family="system-ui, sans-serif" font-size="9" font-weight="bold" fill="#D97706" text-anchor="middle">SOURDOUGH</text>
+  <text x="150" y="174" font-family="system-ui, sans-serif" font-size="8" fill="#78350F" text-anchor="middle">SEA SALT CHIPS</text>
+  <!-- Decorative small crisp chip -->
+  <ellipse cx="150" cy="205" rx="16" ry="10" fill="#FDE68A" stroke="#D97706" stroke-width="2" transform="rotate(-10 150 205)"/>
+</svg>

@@ -1,0 +1,41 @@
+version: '3.8'
+
+services:
+  # MySQL Database Service for POS
+  mysql-db:
+    image: mysql:8.0
+    container_name: pos_mysql_container
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: password123
+      MYSQL_DATABASE: pos_inventory_db
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ../src/data/mockData.ts:/docker-entrypoint-initdb.d/init.sql:ro
+    healthcheck:
+      test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
+      timeout: 10s
+      retries: 5
+
+  # Apache Tomcat 10 Application Server
+  tomcat-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: pos_tomcat_container
+    restart: always
+    depends_on:
+      mysql-db:
+        condition: service_healthy
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./target/pos_inventory.war:/usr/local/tomcat/webapps/pos.war
+      - ./logs:/usr/local/tomcat/logs
+    environment:
+      JAVA_OPTS: "-Djava.awt.headless=true -Xms512m -Xmx1024m"
+
+volumes:
+  mysql_data:

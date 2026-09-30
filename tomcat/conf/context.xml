@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Context configuration for pos_inventory application in Apache Tomcat -->
+<Context reloadable="true" cookies="true">
+  <!-- WatchedResource ensures Tomcat reloads web.xml on modification -->
+  <WatchedResource>WEB-INF/web.xml</WatchedResource>
+  <WatchedResource>WEB-INF/tomcat-web.xml</WatchedResource>
+  <WatchedResource>${catalina.base}/conf/web.xml</WatchedResource>
+
+  <!-- ResourceLink to the Global JNDI DataSource for POS MySQL database -->
+  <ResourceLink name="jdbc/pos_inventory_db"
+                global="jdbc/pos_inventory_db"
+                type="javax.sql.DataSource" />
+</Context>

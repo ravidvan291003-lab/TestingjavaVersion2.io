@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" width="100%" height="100%">
+  <defs>
+    <linearGradient id="soapBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FCE7F3" />
+      <stop offset="100%" stop-color="#FBCFE8" />
+    </linearGradient>
+    <linearGradient id="amberBottle" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#78350F" />
+      <stop offset="40%" stop-color="#92400E" />
+      <stop offset="70%" stop-color="#B45309" />
+      <stop offset="100%" stop-color="#78350F" />
+    </linearGradient>
+  </defs>
+  <rect width="300" height="300" fill="#FDF2F8" rx="24"/>
+  <circle cx="150" cy="150" r="110" fill="url(#soapBg)" opacity="0.6"/>
+  <!-- Bottle body -->
+  <rect x="110" y="105" width="80" height="130" rx="14" fill="url(#amberBottle)" stroke="#451A03" stroke-width="2"/>
+  <!-- Bottle neck -->
+  <rect x="138" y="85" width="24" height="20" fill="#1E293B"/>
+  <!-- Pump head -->
+  <path d="M142 85 L142 65 L158 65 L158 85 Z" fill="#0F172A"/>
+  <path d="M125 58 L165 58 C172 58 178 63 178 70 L178 72 L120 62 Z" fill="#0F172A"/>
+  <!-- Spout -->
+  <path d="M125 58 L105 66 C102 67 102 71 106 72 L122 72" fill="#0F172A"/>
+  <!-- Label -->
+  <rect x="120" y="125" width="60" height="80" rx="4" fill="#FEF3C7"/>
+  <text x="150" y="145" font-family="system-ui, sans-serif" font-size="9" font-weight="900" fill="#831843" text-anchor="middle">BOTANICAL</text>
+  <text x="150" y="158" font-family="system-ui, sans-serif" font-size="11" font-weight="bold" fill="#701A75" text-anchor="middle">LAVENDER</text>
+  <text x="150" y="172" font-family="system-ui, sans-serif" font-size="8" fill="#78350F" text-anchor="middle">HAND SOAP</text>
+  <text x="150" y="195" font-family="system-ui, sans-serif" font-size="7" fill="#64748B" text-anchor="middle">500ml • Organic</text>
+</svg>

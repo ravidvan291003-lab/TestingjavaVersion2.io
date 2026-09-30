@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee
+                             https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd"
+         version="5.0">
+
+  <display-name>POS &amp; Sales Inventory Management System</display-name>
+  <description>Enterprise POS &amp; Inventory Management System running on Apache Tomcat</description>
+
+  <!-- Context Parameters -->
+  <context-param>
+    <param-name>app.version</param-name>
+    <param-value>1.0.0-PROD</param-value>
+  </context-param>
+  <context-param>
+    <param-name>db.jndi.name</param-name>
+    <param-value>java:comp/env/jdbc/pos_inventory_db</param-value>
+  </context-param>
+
+  <!-- Security Authentication Filter -->
+  <filter>
+    <filter-name>AuthFilter</filter-name>
+    <filter-class>com.company.pos.filter.AuthFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>AuthFilter</filter-name>
+    <url-pattern>/dashboard/*</url-pattern>
+    <url-pattern>/products/*</url-pattern>
+    <url-pattern>/pos/*</url-pattern>
+    <url-pattern>/sales/*</url-pattern>
+    <url-pattern>/stock/*</url-pattern>
+    <url-pattern>/reports/*</url-pattern>
+    <url-pattern>/users/*</url-pattern>
+  </filter-mapping>
+
+  <!-- 1. Authentication Servlet -->
+  <servlet>
+    <servlet-name>AuthServlet</servlet-name>
+    <servlet-class>com.company.pos.servlet.AuthServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AuthServlet</servlet-name>
+    <url-pattern>/auth</url-pattern>
+    <url-pattern>/login</url-pattern>
+    <url-pattern>/logout</url-pattern>
+  </servlet-mapping>
+
+  <!-- 2. Products Management Servlet -->
+  <servlet>
+    <servlet-name>ProductServlet</servlet-name>
+    <servlet-class>com.company.pos.servlet.ProductServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ProductServlet</servlet-name>
+    <url-pattern>/products</url-pattern>
+  </servlet-mapping>
+
+  <!-- 3. Categories Management Servlet -->
+  <servlet>
+    <servlet-name>CategoryServlet</servlet-name>
+    <servlet-class>com.company.pos.servlet.CategoryServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CategoryServlet</servlet-name>
+    <url-pattern>/categories</url-pattern>
+  </servlet-mapping>
+
+  <!-- 4. Customers Management Servlet -->
+  <servlet>
+    <servlet-name>CustomerServlet</servlet-name>
+    <servlet-class>com.company.pos.servlet.CustomerServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CustomerServlet</servlet-name>
+    <url-pattern>/customers</url-pattern>
+  </servlet-mapping>
+
+  <!-- 5. POS & Sales Order Servlet -->
+  <servlet>
+    <servlet-name>SalesServlet</servlet-name>
+    <servlet-class>com.company.pos.servlet.SalesServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SalesServlet</servlet-name>
+    <url-pattern>/sales</url-pattern>
+    <url-pattern>/pos/checkout</url-pattern>
+  </servlet-mapping>
+
+  <!-- 6. Invoice & Receipt Printing Servlet -->
+  <servlet>
+    <servlet-name>InvoiceServlet</servlet-name>
+    <servlet-class>com.company.pos.servlet.InvoiceServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>InvoiceServlet</servlet-name>
+    <url-pattern>/invoice</url-pattern>
+  </servlet-mapping>
+
+  <!-- 7. Stock Adjustment & Logs Servlet -->
+  <servlet>
+    <servlet-name>StockServlet</servlet-name>
+    <servlet-class>com.company.pos.servlet.StockServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>StockServlet</servlet-name>
+    <url-pattern>/stock</url-pattern>
+  </servlet-mapping>
+
+  <!-- 8. Financial & Inventory Reports Servlet -->
+  <servlet>
+    <servlet-name>ReportServlet</servlet-name>
+    <servlet-class>com.company.pos.servlet.ReportServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ReportServlet</servlet-name>
+    <url-pattern>/reports</url-pattern>
+  </servlet-mapping>
+
+  <!-- Session Timeout Configuration (30 Minutes) -->
+  <session-config>
+    <session-timeout>30</session-timeout>
+    <cookie-config>
+      <http-only>true</http-only>
+      <secure>false</secure>
+    </cookie-config>
+    <tracking-mode>COOKIE</tracking-mode>
+  </session-config>
+
+  <!-- Default Welcome Files for Tomcat -->
+  <welcome-file-list>
+    <welcome-file>login.jsp</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>index.html</welcome-file>
+  </welcome-file-list>
+
+  <!-- Custom Error Pages -->
+  <error-page>
+    <error-code>404</error-code>
+    <location>/WEB-INF/error404.jsp</location>
+  </error-page>
+  <error-page>
+    <error-code>500</error-code>
+    <location>/WEB-INF/error500.jsp</location>
+  </error-page>
+</web-app>

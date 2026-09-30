@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Apache Tomcat 10.1 / 9.0 Server Configuration for POS & Sales Inventory Management System
+  Context: /pos
+-->
+<Server port="8005" shutdown="SHUTDOWN">
+  <Listener className="org.apache.catalina.startup.VersionLoggerListener" />
+  <Listener className="org.apache.catalina.core.AprLifecycleListener" SSLEngine="on" />
+  <Listener className="org.apache.catalina.core.JreMemoryLeakPreventionListener" />
+  <Listener className="org.apache.catalina.mbeans.GlobalResourcesLifecycleListener" />
+  <Listener className="org.apache.catalina.core.ThreadLocalLeakPreventionListener" />
+
+  <GlobalNamingResources>
+    <!-- MySQL Database Connection Pool for POS System -->
+    <Resource name="jdbc/pos_inventory_db" 
+              auth="Container"
+              type="javax.sql.DataSource"
+              maxTotal="50" 
+              maxIdle="20" 
+              maxWaitMillis="10000"
+              username="root" 
+              password="password123"
+              driverClassName="com.mysql.cj.jdbc.Driver"
+              url="jdbc:mysql://localhost:3306/pos_inventory_db?useSSL=false&amp;allowPublicKeyRetrieval=true&amp;serverTimezone=UTC"
+              validationQuery="SELECT 1"
+              testOnBorrow="true" />
+  </GlobalNamingResources>
+
+  <Service name="Catalina">
+    <!-- HTTP/1.1 Connector -->
+    <Connector port="8080" 
+               protocol="HTTP/1.1"
+               connectionTimeout="20000"
+               redirectPort="8443" 
+               maxThreads="200"
+               minSpareThreads="25"
+               enableLookups="false"
+               acceptCount="100"
+               URIEncoding="UTF-8" />
+
+    <Engine name="Catalina" defaultHost="localhost">
+      <Realm className="org.apache.catalina.realm.LockOutRealm">
+        <Realm className="org.apache.catalina.realm.UserDatabaseRealm"
+               resourceName="UserDatabase" />
+      </Realm>
+
+      <Host name="localhost"  appBase="webapps"
+            unpackWARs="true" autoDeploy="true">
+
+        <!-- POS Application Context -->
+        <Context path="/pos" docBase="pos_inventory" reloadable="true">
+          <ResourceLink name="jdbc/pos_inventory_db"
+                        global="jdbc/pos_inventory_db"
+                        type="javax.sql.DataSource" />
+        </Context>
+
+        <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs"
+               prefix="localhost_access_log" suffix=".txt"
+               pattern="%h %l %u %t &quot;%r&quot; %s %b &quot;%{Referer}i&quot; &quot;%{User-Agent}i&quot;" />
+      </Host>
+    </Engine>
+  </Service>
+</Server>

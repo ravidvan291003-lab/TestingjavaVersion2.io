@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" width="100%" height="100%">
+  <defs>
+    <linearGradient id="waterGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E0F2FE" />
+      <stop offset="50%" stop-color="#BAE6FD" />
+      <stop offset="100%" stop-color="#7DD3FC" />
+    </linearGradient>
+    <linearGradient id="bottleGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0284C7" stop-opacity="0.8" />
+      <stop offset="50%" stop-color="#38BDF8" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#0369A1" stop-opacity="0.85" />
+    </linearGradient>
+  </defs>
+  <rect width="300" height="300" fill="#F0F9FF" rx="24"/>
+  <circle cx="150" cy="150" r="110" fill="url(#waterGrad)" opacity="0.5"/>
+  <!-- Bottle shape -->
+  <path d="M135 60 h30 v25 h15 c10 0 18 10 18 20 l-6 120 c-1 12 -10 20 -22 20 h-40 c-12 0 -21 -8 -22 -20 l-6 -120 c0 -10 8 -20 18 -20 h15 z" fill="url(#bottleGrad)" stroke="#0284C7" stroke-width="3"/>
+  <!-- Bottle cap -->
+  <rect x="133" y="45" width="34" height="15" rx="4" fill="#0369A1" stroke="#075985" stroke-width="2"/>
+  <!-- Label -->
+  <rect x="122" y="125" width="56" height="55" rx="6" fill="#FFFFFF" opacity="0.9"/>
+  <text x="150" y="148" font-family="system-ui, sans-serif" font-size="11" font-weight="bold" fill="#0369A1" text-anchor="middle">PURE</text>
+  <text x="150" y="162" font-family="system-ui, sans-serif" font-size="8" fill="#0284C7" text-anchor="middle">SPARKLING</text>
+  <text x="150" y="172" font-family="system-ui, sans-serif" font-size="7" fill="#64748B" text-anchor="middle">500ml</text>
+  <!-- Bubbles -->
+  <circle cx="140" cy="110" r="3" fill="#FFFFFF" opacity="0.8"/>
+  <circle cx="158" cy="102" r="2.5" fill="#FFFFFF" opacity="0.8"/>
+  <circle cx="148" cy="195" r="3.5" fill="#FFFFFF" opacity="0.7"/>
+  <circle cx="136" cy="205" r="2" fill="#FFFFFF" opacity="0.7"/>
+</svg>

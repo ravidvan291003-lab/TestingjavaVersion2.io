@@ -1,0 +1,8 @@
+{
+  "name": "Remix Sales & Inventory Management System",
+  "description": "Complete Point of Sale, Product & Stock Management with Node.js Express server backend and Apache Tomcat Java EE / JSP servlet runner.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

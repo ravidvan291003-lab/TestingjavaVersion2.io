@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" width="100%" height="100%">
+  <defs>
+    <linearGradient id="boxBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#EEF2FF" />
+      <stop offset="100%" stop-color="#E0E7FF" />
+    </linearGradient>
+  </defs>
+  <rect width="300" height="300" fill="#F8FAFC" rx="24"/>
+  <circle cx="150" cy="150" r="110" fill="url(#boxBg)"/>
+  <!-- Isometric box / package -->
+  <g transform="translate(75, 75)">
+    <!-- Top Face -->
+    <polygon points="75,20 135,50 75,80 15,50" fill="#818CF8" stroke="#4F46E5" stroke-width="2"/>
+    <!-- Left Face -->
+    <polygon points="15,50 75,80 75,140 15,110" fill="#6366F1" stroke="#4F46E5" stroke-width="2"/>
+    <!-- Right Face -->
+    <polygon points="75,80 135,50 135,110 75,140" fill="#4F46E5" stroke="#4338CA" stroke-width="2"/>
+    <!-- Tape / Ribbon -->
+    <polygon points="65,25 85,35 50,85 30,75" fill="#C7D2FE" opacity="0.6"/>
+  </g>
+  <text x="150" y="245" font-family="system-ui, sans-serif" font-size="12" font-weight="bold" fill="#4338CA" text-anchor="middle">PRODUCT ITEM</text>
+</svg>

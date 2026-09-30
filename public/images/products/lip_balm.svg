@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" width="100%" height="100%">
+  <defs>
+    <linearGradient id="balmBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FEF3C7" />
+      <stop offset="100%" stop-color="#FCE7F3" />
+    </linearGradient>
+    <linearGradient id="tubeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FCD34D" />
+      <stop offset="50%" stop-color="#FDE68A" />
+      <stop offset="100%" stop-color="#F59E0B" />
+    </linearGradient>
+  </defs>
+  <rect width="300" height="300" fill="#FFFBEB" rx="24"/>
+  <circle cx="150" cy="150" r="110" fill="url(#balmBg)" opacity="0.6"/>
+  <!-- Tube body -->
+  <rect x="125" y="110" width="50" height="110" rx="8" fill="url(#tubeGrad)" stroke="#B45309" stroke-width="2"/>
+  <!-- Rotating base dial -->
+  <rect x="125" y="210" width="50" height="20" rx="4" fill="#D97706" stroke="#92400E" stroke-width="2"/>
+  <!-- Balm stick extended -->
+  <path d="M132 110 L132 75 C132 65 140 60 150 60 C160 60 168 65 168 75 L168 110 Z" fill="#FEF08A" stroke="#CA8A04" stroke-width="1.5"/>
+  <!-- Honeycomb icon or bee badge -->
+  <circle cx="150" cy="155" r="16" fill="#FFFFFF"/>
+  <text x="150" y="160" font-family="system-ui, sans-serif" font-size="14" text-anchor="middle">🐝</text>
+  <text x="150" y="185" font-family="system-ui, sans-serif" font-size="9" font-weight="bold" fill="#78350F" text-anchor="middle">BEESWAX</text>
+  <text x="150" y="197" font-family="system-ui, sans-serif" font-size="7" fill="#92400E" text-anchor="middle">LIP BALM</text>
+</svg>

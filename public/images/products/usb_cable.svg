@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" width="100%" height="100%">
+  <defs>
+    <linearGradient id="elecBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#EDE9FE" />
+      <stop offset="100%" stop-color="#DDD6FE" />
+    </linearGradient>
+    <linearGradient id="braid" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#475569" />
+      <stop offset="50%" stop-color="#1E293B" />
+      <stop offset="100%" stop-color="#0F172A" />
+    </linearGradient>
+  </defs>
+  <rect width="300" height="300" fill="#F8FAFC" rx="24"/>
+  <circle cx="150" cy="150" r="110" fill="url(#elecBg)" opacity="0.7"/>
+  <!-- Coiled cable -->
+  <circle cx="150" cy="150" r="75" fill="none" stroke="url(#braid)" stroke-width="12" stroke-dasharray="14 4"/>
+  <circle cx="150" cy="150" r="50" fill="none" stroke="url(#braid)" stroke-width="12" stroke-dasharray="14 4"/>
+  <!-- USB Type C head 1 -->
+  <rect x="180" y="80" width="45" height="24" rx="6" fill="#8B5CF6" stroke="#6D28D9" stroke-width="2" transform="rotate(35 180 80)"/>
+  <rect x="220" y="84" width="16" height="14" rx="3" fill="#CBD5E1" stroke="#64748B" stroke-width="1.5" transform="rotate(35 180 80)"/>
+  <!-- USB Type C head 2 -->
+  <rect x="70" y="195" width="45" height="24" rx="6" fill="#8B5CF6" stroke="#6D28D9" stroke-width="2" transform="rotate(-40 70 195)"/>
+  <rect x="52" y="200" width="16" height="14" rx="3" fill="#CBD5E1" stroke="#64748B" stroke-width="1.5" transform="rotate(-40 70 195)"/>
+  <!-- Center Tag -->
+  <rect x="100" y="132" width="100" height="36" rx="10" fill="#1E293B"/>
+  <text x="150" y="148" font-family="system-ui, sans-serif" font-size="10" font-weight="bold" fill="#A78BFA" text-anchor="middle">USB-C 100W</text>
+  <text x="150" y="161" font-family="system-ui, sans-serif" font-size="8" fill="#E2E8F0" text-anchor="middle">BRAIDED 2.0M</text>
+</svg>
